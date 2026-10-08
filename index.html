@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="HandheldFriendly" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://join.sam-bot.xyz/" />
+    <meta property="og:title" content="Inscrição staff SamBot" />
+    <meta property="og:description" content="Participe da equipe do SamBot! Faça sua inscrição e ajude a comunidade a aproveitar ao máximo o SamBot." />
+    <meta property="og:image" content="https://join.sam-bot/assets/seo.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://join.sam-bot.xyz/" />
+    <meta property="twitter:title" content="Inscrição staff SamBot" />
+    <meta property="twitter:description" content="Participe da equipe do SamBot! Faça sua inscrição e ajude a comunidade a aproveitar ao máximo o SamBot." />
+    <meta property="og:image" content="https://join.sam-bot/assets/seo.png" />
+  
+  <title>Inscrição staff SamBot</title>
+  <meta name="description" content="Participe da equipe do SamBot! Faça sua inscrição e ajude a comunidade a aproveitar ao máximo o SamBot.">
+  <meta name="keywords" content="SamBot, equipe de suporte, inscrição staff, suporte, chatbot, comunidade, moderação, staff SamBot">
+
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="index.css">
+
+  <style>
+    body {
+      background-image: url('assets/background.png');
+      background-size: cover;
+      background-attachment: fixed; /* Efeito Parallax */
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      font-family: 'Figtree', sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      width: 400px;
+    }
+
+    h2 {
+      font-family: 'Figtree-Bold', sans-serif;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+      border-radius: 10px;
+      font-family: 'Figtree-Light', sans-serif;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #6f42c1;
+      border: none;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Figtree-Bold', sans-serif;
+    }
+
+    button:hover {
+      background-color: #563d7c;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Inscrição para Staff do SamBot</h2>
+    <form id="staff-form">
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="text" name="discord_nick" placeholder="Nick do Discord" required>
+
+      <textarea name="question1" placeholder="Por que você deseja se tornar um membro da staff neste servidor?" required></textarea>
+      <textarea name="question2" placeholder="Quais são as suas experiências anteriores como administrador ou moderador em outros servidores?" required></textarea>
+      <textarea name="question3" placeholder="Como você lidaria com um conflito entre dois membros do servidor?" required></textarea>
+      <textarea name="question4" placeholder="Qual é a sua disponibilidade de tempo para atuar como um membro da staff?" required></textarea>
+      <textarea name="question5" placeholder="Como você lidaria com uma violação das regras por um amigo próximo no servidor?" required></textarea>
+      <textarea name="question6" placeholder="O que você faria se um membro do servidor começasse a espalhar informações falsas ou prejudiciais?" required></textarea>
+      <textarea name="question7" placeholder="Você está confortável usando ferramentas de moderação (por exemplo, banimento, muting, etc.)?" required></textarea>
+      <textarea name="question8" placeholder="Como você incentivaria uma comunidade positiva e engajada no servidor?" required></textarea>
+      <textarea name="question9" placeholder="Descreva uma situação em que você teve que tomar uma decisão difícil. Como você lidou com ela?" required></textarea>
+      <textarea name="question10" placeholder="Quais são, na sua opinião, as qualidades mais importantes que os membros da staff devem ter?" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('staff-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+      const webhookURL = 'https://discord.com/api/webhooks/1316546862882361375/YG4uhvIdd5n05kEnyUzW8CJbXaJE0KY1qy20OY85XV__emF3olKm8Nxu-ebM91i6sd0j';
+
+      const data = {
+        content: '',
+        embeds: [
+          {
+            title: 'Inscrição para Staff',
+            fields: [
+              { name: 'Nome', value: formData.get('nome') },
+              { name: 'Nick do Discord', value: formData.get('discord_nick') },
+              { name: '1. Por que deseja se tornar um membro da staff?', value: formData.get('question1') },
+              { name: '2. Experiências anteriores como administrador ou moderador?', value: formData.get('question2') },
+              { name: '3. Como lidaria com um conflito entre dois membros?', value: formData.get('question3') },
+              { name: '4. Disponibilidade de tempo para atuar como staff?', value: formData.get('question4') },
+              { name: '5. Como lidaria com uma violação das regras por um amigo?', value: formData.get('question5') },
+              { name: '6. O que faria se alguém espalhasse informações falsas?', value: formData.get('question6') },
+              { name: '7. Confortável com ferramentas de moderação?', value: formData.get('question7') },
+              { name: '8. Como incentivaria uma comunidade positiva?', value: formData.get('question8') },
+              { name: '9. Situação de decisão difícil e como lidou com ela?', value: formData.get('question9') },
+              { name: '10. Quais qualidades importantes para a staff?', value: formData.get('question10') }
+            ]
+          }
+        ]
+      };
+
+      fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        alert('Formulário enviado com sucesso!');
+        window.location.href = "https://sam-bot.xyz";  // Redirecionamento após o popup
+      })
+      .catch(() => alert('Erro ao enviar o formulário.'));
+    });
+  </script>
+</body>
+</html>
